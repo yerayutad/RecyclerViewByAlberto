@@ -1,33 +1,35 @@
 package com.amarinag.demon02_recyclerview
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.amarinag.demon02_recyclerview.databinding.ItemUserBinding
 
-class UserAdapter : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
-    private val users: List<String> = listOf("user #1", "user #2", "user #3", "User #6")
+class UserAdapter(
+    private val users: MutableList<User>,
+    private val listener: (User) -> Unit
+) :
+    RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view: View = layoutInflater.inflate(R.layout.item_user, parent, false)
-        return UserViewHolder(view)
+        val binding: ItemUserBinding = ItemUserBinding.inflate(layoutInflater, parent, false)
+        return UserViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = users[position]
-        holder.tvName.text = user
+        holder.binding.tvUsername.text = user.firstName
+        holder.binding.tvLastName.text = user.lastName
+        holder.binding.root.setOnClickListener { listener(user) }
     }
 
     override fun getItemCount(): Int = users.size
 
-
-    class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvName: TextView
-
-        init {
-            tvName = view.findViewById(R.id.tv_username)
-        }
+    fun addUser(newUser: User) {
+        users.add(newUser)
+        notifyDataSetChanged()
     }
+
+    class UserViewHolder(val binding: ItemUserBinding) : RecyclerView.ViewHolder(binding.root)
 }
