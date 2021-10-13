@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.amarinag.demon02_recyclerview.databinding.ItemUserBinding
+import com.squareup.picasso.Picasso
 
 class UserAdapter(
     private val users: MutableList<User>,
@@ -21,6 +22,10 @@ class UserAdapter(
         val user = users[position]
         holder.binding.tvUsername.text = user.firstName
         holder.binding.tvLastName.text = user.lastName
+        Picasso.get()
+            .load(user.imageUrl)
+            .placeholder(R.mipmap.ic_launcher)
+            .into(holder.binding.ivAvatar)
         holder.binding.root.setOnClickListener { listener(user) }
     }
 

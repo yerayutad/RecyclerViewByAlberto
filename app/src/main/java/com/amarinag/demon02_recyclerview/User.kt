@@ -4,6 +4,7 @@ package com.amarinag.demon02_recyclerview
 class User(
     val id: Int,
     val firstName: String,
+    val imageUrl: String,
     var password: String = "secret",
     var lastName: String? = password + "fff"
 )
