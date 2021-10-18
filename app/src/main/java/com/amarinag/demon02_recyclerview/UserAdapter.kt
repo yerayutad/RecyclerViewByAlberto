@@ -9,8 +9,7 @@ import com.squareup.picasso.Picasso
 class UserAdapter(
     private val users: MutableList<User>,
     private val listener: (User) -> Unit
-) :
-    RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -31,8 +30,7 @@ class UserAdapter(
 
     override fun getItemCount(): Int = users.size
 
-    fun addUser(newUser: User) {
-        users.add(newUser)
+    fun refreshUsers() {
         notifyDataSetChanged()
     }
 

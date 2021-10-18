@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../Utad/DemoN02RecyclerView/app/src/main/res/layout/activity_add_user.xml" value="0.2509057971014493" />
+        <entry key="../../Utad/DemoN02RecyclerView/app/src/main/res/layout/activity_detail.xml" value="0.45" />
         <entry key="../../Utad/DemoN02RecyclerView/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="../../Utad/DemoN02RecyclerView/app/src/main/res/layout/item_user.xml" value="0.335" />
       </map>

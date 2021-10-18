@@ -1,10 +1,9 @@
 package com.amarinag.demon02_recyclerview
 
-//id, name, password, lastName
 class User(
-    val id: Int,
+    val id: String,
     val firstName: String,
-    val imageUrl: String,
+    val lastName: String,
+    val imageUrl: String = "https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg",
     var password: String = "secret",
-    var lastName: String? = password + "fff"
 )
