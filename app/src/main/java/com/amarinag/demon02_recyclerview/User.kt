@@ -1,9 +1,27 @@
 package com.amarinag.demon02_recyclerview
 
-//id, name, password, lastName
 class User(
-    val id: Int,
-    private val name: String,
+    val id: String,
+    val firstName: String,
+    val lastName: String,
+    val imageUrl: String = "https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg",
     var password: String = "secret",
-    var lastName: String? = password + "fff"
 )
+
+/*fun userJsonToUser(userJson: UserJson): User =
+     User(
+        userJson.email,
+        userJson.name.first,
+        userJson.name.last,
+        userJson.picture.medium
+    )*/
+
+fun UserJson.toUser(): User =
+    User(
+        this.email,
+        this.name.first,
+        this.name.last,
+        this.picture.medium
+    )
+fun List<UserJson>.toUser(): List<User> =
+    this.map { userJson -> userJson.toUser() }
