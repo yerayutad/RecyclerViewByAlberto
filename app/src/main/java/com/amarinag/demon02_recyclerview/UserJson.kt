@@ -1,5 +1,12 @@
 package com.amarinag.demon02_recyclerview
 
+import com.google.gson.annotations.SerializedName
+
+data class UserResult(
+    @SerializedName("results")
+    var users: List<UserJson>
+)
+
 data class UserJson(
     var name: FullName,
     var email: String,

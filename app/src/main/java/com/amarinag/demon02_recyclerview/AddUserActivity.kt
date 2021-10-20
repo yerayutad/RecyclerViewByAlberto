@@ -13,18 +13,11 @@ class AddUserActivity : AppCompatActivity() {
         binding = ActivityAddUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Picasso.get()
-            .load("https://i.imgur.com/DvpvklR.png")
-            .placeholder(R.mipmap.ic_launcher)
-            .into(binding.ivImage1)
-        Picasso.get()
-            .load("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
-            .placeholder(R.mipmap.ic_launcher)
-            .into(binding.ivImage2)
 
-        binding.rbImage1.setOnCheckedChangeListener { buttonView, isChecked ->
+        binding.ivImage1.imageUrl("https://i.imgur.com/DvpvklR.png")
+        binding.ivImage2.imageUrl("https://upload.wikimedia.org/wikipedia/commons/3/30/Chuck_Norris_May_2015.jpg")
 
-        }
+
         binding.rbImage1.setOnCheckedChangeListener { buttonView, isChecked ->
             binding.rbImage2.isChecked = !isChecked
         }

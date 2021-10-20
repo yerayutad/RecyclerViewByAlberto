@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.amarinag.demon02_recyclerview.databinding.ActivityMainBinding
+import com.google.gson.GsonBuilder
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -15,15 +16,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val gson = GsonBuilder().create()
+        val result: UserResult = gson.fromJson(FakeData.usersJson, UserResult::class.java)
 
-
-
-
-
-
-
-
-
+        (application as App).users.addAll(result.users.toUser())
 
         val users = (application as App).users
         adapter = UserAdapter(users) { user ->
@@ -57,6 +53,7 @@ class MainActivity : AppCompatActivity() {
 //   COIL √
 
 
+//        result.users.map { User(it.email, it.name.first,it.name.last, it.picture.medium) }.toMutableList()
 
 
 
