@@ -1,9 +1,11 @@
-package com.amarinag.demon02_recyclerview
+package com.amarinag.demon02_recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.amarinag.demon02_recyclerview.R
 import com.amarinag.demon02_recyclerview.databinding.ItemUserBinding
+import com.amarinag.demon02_recyclerview.model.User
 import com.squareup.picasso.Picasso
 
 class UserAdapter(

@@ -1,4 +1,4 @@
-package com.amarinag.demon02_recyclerview
+package com.amarinag.demon02_recyclerview.data
 
 object FakeData {
 

@@ -3,6 +3,7 @@ package com.amarinag.demon02_recyclerview
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.amarinag.demon02_recyclerview.databinding.ActivityAddUserBinding
+import com.amarinag.demon02_recyclerview.model.User
 import com.squareup.picasso.Picasso
 import java.util.*
 

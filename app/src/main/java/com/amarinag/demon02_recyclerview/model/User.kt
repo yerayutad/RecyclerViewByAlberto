@@ -1,4 +1,6 @@
-package com.amarinag.demon02_recyclerview
+package com.amarinag.demon02_recyclerview.model
+
+import com.amarinag.demon02_recyclerview.UserJson
 
 class User(
     val id: String,

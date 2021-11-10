@@ -5,7 +5,10 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.amarinag.demon02_recyclerview.adapter.UserAdapter
+import com.amarinag.demon02_recyclerview.data.FakeData
 import com.amarinag.demon02_recyclerview.databinding.ActivityMainBinding
+import com.amarinag.demon02_recyclerview.model.toUser
 import com.google.gson.GsonBuilder
 
 class MainActivity : AppCompatActivity() {

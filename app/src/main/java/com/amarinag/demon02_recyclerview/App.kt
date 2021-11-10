@@ -3,6 +3,8 @@ package com.amarinag.demon02_recyclerview
 import android.app.Application
 import android.widget.ImageView
 import androidx.constraintlayout.helper.widget.MotionPlaceholder
+import com.amarinag.demon02_recyclerview.R
+import com.amarinag.demon02_recyclerview.model.User
 import com.squareup.picasso.Picasso
 
 class App : Application() {
